@@ -50,6 +50,7 @@ jobs:
           echo "GITHUB_WORKSPACE=${{ github.workspace }}"
           echo "GITHUB_ACTOR=${{ github.actor }}"
 
+      # 민간한 값인 경우에는 모두 secret으로 표현함
       - name: 아무한테 노출이 되면 안 되는 값
         run: |
           echo "ACTIONS_TEST=${{ secrets.ACTIONS_TEST }}"
