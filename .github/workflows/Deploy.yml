@@ -1,5 +1,8 @@
+# Workflow file for Github Actions
 name: Github Actiosn 실행시켜보기
 
+# Event : 실행되는 시점을 설정
+# main이라는 브랜치에 push 될 때 아래의 Workflow를 실행
 on:
   push:
     branches:
@@ -8,10 +11,24 @@ on:
     branches:
       - main
 
+# 하나의 Workflow는 1개 이상의 Job으로 구성됨
+# Job : Workflow에서 실행할 작업을 정의
+# Job은 병렬로 실행됨
+# Job은 서로 다른 OS에서 실행될 수 있음
 jobs:
+  # Job의 이름은 My-Deploy-Job
   My-Deploy-Job:
+    # Job이 실행될 OS를 설정
     runs-on: ubuntu-latest
 
+    # Steps : Job에서 실행할 가장 작은 작업을 정의
+    # Job은 여러개의 Steps으로 구성됨
     steps:
+      # Step의 이름은 Checkout code
+      # actions/checkout@v2 : Github에서 제공하는 Action을 사용하여 코드를 체크아웃함
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # Step의 이름은 Hello World
+      # run : Shell 명령어를 실행함
       - name: Hello World
         run: echo "Hello, World!"
