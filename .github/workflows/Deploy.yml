@@ -49,3 +49,7 @@ jobs:
           echo "GITHUB_EVENT_PATH=${{ github.event_path }}"
           echo "GITHUB_WORKSPACE=${{ github.workspace }}"
           echo "GITHUB_ACTOR=${{ github.actor }}"
+
+      - name: 아무한테 노출이 되면 안 되는 값
+        run: |
+          echo "ACTIONS_TEST=${{ secrets.ACTIONS_TEST }}"
