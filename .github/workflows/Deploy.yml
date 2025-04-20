@@ -32,3 +32,20 @@ jobs:
       # run : Shell 명령어를 실행함
       - name: Hello World
         run: echo "Hello, World!"
+
+      - name : Github Actions 자체에 저장되어 있는 변수 출력하기
+        run: |
+          echo "GITHUB_WORKFLOW=${{ github.workflow }}"
+          echo "GITHUB_RUN_ID=${{ github.run_id }}"
+          echo "GITHUB_RUN_NUMBER=${{ github.run_number }}"
+          echo "GITHUB_ACTION=${{ github.action }}"
+          echo "GITHUB_ACTOR=${{ github.actor }}"
+          echo "GITHUB_REPOSITORY=${{ github.repository }}"
+          echo "GITHUB_SHA=${{ github.sha }}"
+          echo "GITHUB_REF=${{ github.ref }}"
+          echo "GITHUB_HEAD_REF=${{ github.head_ref }}"
+          echo "GITHUB_BASE_REF=${{ github.base_ref }}"
+          echo "GITHUB_EVENT_NAME=${{ github.event_name }}"
+          echo "GITHUB_EVENT_PATH=${{ github.event_path }}"
+          echo "GITHUB_WORKSPACE=${{ github.workspace }}"
+          echo "GITHUB_ACTOR=${{ github.actor }}"
